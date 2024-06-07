@@ -20,6 +20,10 @@ RUN --mount=type=cache,id=gomod,target=/go/pkg/mod \
 # ----- Deliverable Image -----
 FROM opensuse/leap:15.5
 
+CMD echo "search suse.com" >> /etc/resolv.conf
+CMD echo "10.100.2.10" >> /etc/resolv.conf
+CMD echo "10.100.2.8" >> /etc/resolv.conf
+
 # Dependency uses by line
 # 1. ISO image building
 # 2. RAW image modification on x86_64
